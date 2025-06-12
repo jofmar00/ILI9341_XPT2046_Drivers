@@ -46,3 +46,7 @@ Small demonstration programs are provided to both validate touchscreen functiona
 - **`LCD_TouchScreen_tes.c`**:
     This module illustrates how to interact with the touchscreen using the `LCD_TouchScreen.c` module. It includes examples of reading touch coordinates and processing user input. The demo also combines both touch and graphics functionality to create interactive drawing applications.
 
+---
+## Documentation
+For more information about this project, such as use cases or contribuiting info, refer to the official Spanish documentation listed on the repo.
+
