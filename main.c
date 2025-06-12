@@ -29,7 +29,7 @@
 #define BTN_UP 25
 
 void buttons_init() {
-		nrf_gpio_cfg_input(BTN_UP, NRF_GPIO_PIN_PULLUP);
+	nrf_gpio_cfg_input(BTN_UP, NRF_GPIO_PIN_PULLUP);
     nrf_gpio_cfg_input(BTN_LEFT, NRF_GPIO_PIN_PULLUP);
     nrf_gpio_cfg_input(BTN_DOWN, NRF_GPIO_PIN_PULLUP);
     nrf_gpio_cfg_input(BTN_RIGHT, NRF_GPIO_PIN_PULLUP);
@@ -44,17 +44,17 @@ int main(void)
    	// Start tests.
 	LCD_GFX_test_text();
 	while(1) {
-			if (!nrf_gpio_pin_read(BTN_UP)) {
-				LCD_GFX_test_shapes();
-			}
-			else if (!nrf_gpio_pin_read(BTN_LEFT)) {
-				LCD_TouchScreen_test_paint();
-			}
-			else if (!nrf_gpio_pin_read(BTN_DOWN)) {
-				LCD_GFX_test_bitmap();
-			}
-			else if (!nrf_gpio_pin_read(BTN_RIGHT)) {
-				LCD_GFX_test_text();
-			}
+		if (!nrf_gpio_pin_read(BTN_UP)) {
+			LCD_GFX_test_shapes();
+		}
+		else if (!nrf_gpio_pin_read(BTN_LEFT)) {
+			LCD_TouchScreen_test_paint();
+		}
+		else if (!nrf_gpio_pin_read(BTN_DOWN)) {
+			LCD_GFX_test_bitmap();
+		}
+		else if (!nrf_gpio_pin_read(BTN_RIGHT)) {
+			LCD_GFX_test_text();
+		}
 	}
 }
