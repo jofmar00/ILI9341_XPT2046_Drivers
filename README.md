@@ -44,5 +44,5 @@ Small demonstration programs are provided to both validate touchscreen functiona
   This module showcases the graphics functionalities provided by `LCD_GFX.c`. It includes examples of drawing basic shapes, text, and images on the display, demonstrating how to use the graphical primitives exposed by the high-level graphics module.
 
 - **`LCD_TouchScreen_tes.c`**:
-    This demo illustrates how to interact with the touchscreen using the `LCD_TouchScreen.c` module. It includes examples of reading touch coordinates and processing user input. The demo also combines both touch and graphics functionality to create interactive drawing applications.
+    This module illustrates how to interact with the touchscreen using the `LCD_TouchScreen.c` module. It includes examples of reading touch coordinates and processing user input. The demo also combines both touch and graphics functionality to create interactive drawing applications.
 
