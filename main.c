@@ -44,17 +44,9 @@ int main(void)
    	// Start tests.
 	LCD_GFX_test_text();
 	while(1) {
-		if (!nrf_gpio_pin_read(BTN_UP)) {
-			LCD_GFX_test_shapes();
-		}
-		else if (!nrf_gpio_pin_read(BTN_LEFT)) {
-			LCD_TouchScreen_test_paint();
-		}
-		else if (!nrf_gpio_pin_read(BTN_DOWN)) {
-			LCD_GFX_test_bitmap();
-		}
-		else if (!nrf_gpio_pin_read(BTN_RIGHT)) {
-			LCD_GFX_test_text();
-		}
+		if 		(!nrf_gpio_pin_read(BTN_UP))	LCD_GFX_test_shapes();
+		else if (!nrf_gpio_pin_read(BTN_LEFT)) 	LCD_TouchScreen_test_paint();
+		else if (!nrf_gpio_pin_read(BTN_DOWN)) 	LCD_GFX_test_bitmap();
+		else if (!nrf_gpio_pin_read(BTN_RIGHT)) LCD_GFX_test_text();
 	}
 }

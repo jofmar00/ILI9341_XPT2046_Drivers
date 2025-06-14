@@ -50,8 +50,8 @@ void LCD_GFX_setRotation(uint8_t dir) {
 void LCD_GFX_drawBitmap(int16_t x, int16_t y, const uint8_t *bitmap, int16_t w, int16_t h, uint16_t color) {
     ILI9341_setRotation(0);
     int16_t byteWidth = (w+7)/8;
-    for (uint16_t j=0; j < h; j++) {
-        for (uint16_t i=0; i < w; i++){
+    for (uint16_t j = 0; j < h; j++) {
+        for (uint16_t i = 0; i < w; i++){
             unsigned char byte = pgm_read_byte(bitmap + j * byteWidth + i / 8);
             if (byte & (0x80 >> (i & 0x07))) {
                 LCD_GFX_drawPixel(x+i, y+j, color);
@@ -189,7 +189,7 @@ void LCD_GFX_drawRect(int16_t x, int16_t y, int16_t w, int16_t h, uint16_t color
 }
 
 void LCD_GFX_fillRect(int16_t x, int16_t y, int16_t w, int16_t h, uint16_t color) {
-    for (int16_t i=x; i<x+w; i++) {
+    for (int16_t i = x; i < x+w; i++) {
         LCD_GFX_drawVLine(i, y, h,color);
     }
 }
@@ -205,7 +205,7 @@ void LCD_GFX_drawChar(int16_t x, int16_t y, char c, uint16_t color, uint16_t bg,
    return;
 
    // Bucle sobre las columnas de pixeles del caracter
-   for (uint8_t i=0; i < 6; i++) {
+   for (uint8_t i = 0; i < 6; i++) {
         uint8_t line;
         if (i == 5) {
             line = 0x0;
@@ -214,7 +214,7 @@ void LCD_GFX_drawChar(int16_t x, int16_t y, char c, uint16_t color, uint16_t bg,
             line = pgm_read_byte(font+(c*5)+i);
         }
         // Bucle sobre los pixeles de cada columna
-        for (uint8_t j=0; j < 8; j++) {
+        for (uint8_t j = 0; j < 8; j++) {
             if (line & 0x1) {   
                 if (size == 1) {    // Tamaño normal
                     LCD_GFX_drawPixel(x+i, y+j, color);

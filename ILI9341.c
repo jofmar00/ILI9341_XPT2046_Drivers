@@ -65,7 +65,6 @@ static void ILI9341_spi_init(void) {
  * @param cmd Código del comando a enviar.
  */
 static void ILI9341_writeCommand(uint8_t cmd) {
-	
     nrf_gpio_pin_write(LCD_DC, 0);	// Command mode
     nrf_gpio_pin_write(LCD_CS, 0);
     
@@ -241,7 +240,7 @@ void ILI9341_drawPixel(int16_t x, int16_t y, uint16_t color) {
 	if(x < 0 || y < 0 || x >= TFTWIDTH || y >= TFTHEIGHT) return;
 
     ILI9341_setAddrWindow(x, y, x, y);
-	   ILI9341_writeRegister16(ILI9341_MEMORYWRITE, color);
+	ILI9341_writeRegister16(ILI9341_MEMORYWRITE, color);
 }
 
 void ILI9341_setRotation(uint8_t dir) {

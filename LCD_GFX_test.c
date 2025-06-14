@@ -116,7 +116,6 @@ void LCD_GFX_test_rotation() {
         LCD_GFX_setRotation(i);
         LCD_GFX_fillScreen(BLACK);
         LCD_GFX_drawString(LCD_WIDTH >> 2, LCD_HEIGHT >> 1, "TEST", RED, WHITE, 3);
-        
     }
 }
 

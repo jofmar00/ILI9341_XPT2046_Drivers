@@ -44,18 +44,18 @@ void LCD_TouchScreen_test_paint() {
 	uint8_t terminado = 0;
     while (!terminado) {
         if (LCD_TouchScreen_isTouched()) {
-						LCD_TouchScreen_readPosition(&x, &y);
-					// Terminar sesion pintado
-					if(y < 30 && (x > 70 && x <150)) {
-							terminado = 1;
-						}
-					// Pintar normal
-					else {
-							LCD_GFX_fillRect(LCD_WIDTH - x, y, 5, 5, BLUE);
-						}
+			LCD_TouchScreen_readPosition(&x, &y);
+			// Terminar sesion pintado
+			if(y < 30 && (x > 70 && x <150)) {
+				terminado = 1;
+			}
+			// Pintar normal
+			else {
+				LCD_GFX_fillRect(LCD_WIDTH - x, y, 5, 5, BLUE);
+			}
         }
     }
-		LCD_GFX_fillScreen(BLACK);
+	LCD_GFX_fillScreen(BLACK);
 }
 
 void LCD_TouchScreen_test_calibrate() {
